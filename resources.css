@@ -1,0 +1,274 @@
+body {
+    background: linear-gradient(to right,#e5e5e6, rgb(240, 230, 230), rgb(190, 210, 237)) ;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: rgb(93, 4, 4);
+    font-size: 24px;
+    font-family: cursive;
+}
+
+.logo img {
+    height: 40px; /* Set the height of the logo image */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.nav-items {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-items a {
+    color: black;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-items a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+.history {
+    color: black;
+}
+
+.history a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.history a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+h1 {
+    color: #d8901b;
+    text-align: center;
+    opacity: 0; /* Start invisible */
+    transform: translateY(-50px); /* Move up initially */
+    animation: fadeInUp 0.5s forwards; /* Fade in and move up */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    opacity: 0; /* Start invisible */
+    animation: fadeInLeft 0.5s forwards; /* Fade in from left */
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Final position */
+    }
+}
+
+.card {
+    flex: 1;
+    margin: 10px;
+    height: 200px; /* Fixed height for all cards */
+    text-align: center;
+    overflow: hidden;
+    transform: translateX(-50px); /* Move left initially */
+    opacity: 0; /* Start invisible */
+    animation: slideInCard 0.5s forwards; /* Slide in for each card */
+}
+
+@keyframes slideInCard {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Final position */
+    }
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.1s; /* Delay for first card */
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s; /* Delay for second card */
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.3s; /* Delay for third card */
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.4s; /* Delay for fourth card */
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the card */
+    
+}
+
+.text-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Default background for text cards */
+}
+
+.bg-color-1 {
+    background: linear-gradient(to right, #939395, rgb(190, 210, 237)); /* Customize background color */
+}
+
+.bg-color-2 {
+    background: linear-gradient(to bottom, #ccd8ee, rgb(190, 205, 248), rgb(173, 176, 180)); /* Customize background color */
+}
+
+.image-bg-card {
+    background-image: url('https://i.pinimg.com/564x/1d/f2/75/1df275963a3f6c9aa6307c2fb961030f.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.transparent-box {
+    background-color: rgba(205, 213, 244, 0.7); /* Transparent box */
+    padding: 20px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+/* Keywords Container */
+.keyword-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.5s forwards; /* Fade in */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Final opacity */
+    }
+}
+
+
+.keyword-container a {
+    margin: 0 15px;
+    text-decoration: underline;
+    color: #d8731b;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.keyword-container a:hover {
+    color: #f0a88a; /* Change color on hover */
+    font-weight: bolder;
+    font-size: large;
+    text-decoration: none;
+}
+
+/* Large Image */
+.large-image {
+    text-align: center;
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Move down initially */
+    animation: fadeInUp 0.5s forwards; /* Fade in and move up */
+}
+
+.large-image img {
+    width: 60%; /* 80% width */
+    height: 40vh; /* Maintain aspect ratio */
+    max-height: 40vh; /* Max height of 40vh */
+    object-fit: cover; /* Cover the area without scrolling */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+
+/* Existing styles remain unchanged */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    body {
+        overflow: scroll; /* Reduce font size for smaller screens */
+    }
+    nav {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .nav-items {
+        margin: 10px 0; /* Add margin for spacing */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center links */
+    }
+
+    .nav-items a {
+        margin: 5px 0; /* Vertical spacing between links */
+        font-size: 16px; /* Slightly smaller font size */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust heading size for smaller screens */
+    }
+
+    .cards-container {
+        flex-direction: column; /* Stack cards vertically */
+        margin: 10px 0; /* Reduced margin for compactness */
+    }
+
+    .card {
+        width: 100%; /* Full width for cards */
+        margin: 10px 0; /* Vertical spacing for cards */
+        height: auto; /* Auto height for better content fit */
+    }
+
+    .image-bg-card {
+        height: auto; /* Auto height for background card */
+    }
+
+    .keyword-container {
+        flex-direction: column; /* Stack keywords vertically */
+        align-items: center; /* Center align keywords */
+    }
+
+    .keyword-container a {
+        margin: 5px 0; /* Vertical spacing for links */
+    }
+
+    .large-image img {
+        width: 90%; /* Adjust width for large image */
+        height: auto; /* Auto height for aspect ratio */
+    }
+}

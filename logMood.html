@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodSYNC - Log Mood</title>
+    <link rel="stylesheet" href="logMood.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="th.jpg" alt="MoodSYNC" class="logo-image">
+            MoodSYNC
+        </div>
+        <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="logMood.html">Log Mood</a>
+            <a href="notes.html">Notes</a>
+            <a href="resources.html">Resources</a>
+        </div>
+        <div class="history">
+            <a href="history.html">History</a>
+        </div>
+    </nav>
+    
+    <div class="hero">
+        <h2>Track your moods and thoughts for a healthier mind!</h2>
+    </div>
+
+   <main>
+    <div class="mood-log">
+        <h1>Log Your Mood</h1>
+        <select id="moodSelect" onchange="handleMoodChange()">
+            <option value="">Select Mood</option>
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
+            <option value="Anxious">Anxious</option>
+            <option value="Angry">Angry</option>
+            <option value="Custom">Custom</option>
+        </select>
+        <input type="text" id="customMood" placeholder="Describe your mood" style="display:none;">
+        <input type="text" id="thoughtInput" placeholder="Share your thoughts..." style="display:none;">
+        <button onclick="logMood()">Submit</button>
+    </div>
+    <div id="result"></div>
+</main>
+
+        
+    
+</body>
+</html>

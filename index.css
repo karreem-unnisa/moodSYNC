@@ -1,0 +1,277 @@
+body {
+    background: linear-gradient(to bottom,#c2c2ea, rgb(176, 186, 200), rgb(171, 200, 238), rgb(187, 205, 231));
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 20px;
+}
+
+
+.logo {
+    color: rgb(93, 4, 4);
+    font-size: 24px;
+    font-family: cursive;
+}
+
+.logo img {
+    height: 40px; /* Set the height of the logo image */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.nav-items {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-items a {
+    color: black;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-items a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+.history {
+    color: black;
+}
+
+.history a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.history a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+
+#home {
+    display: flex;
+    align-items: center; /* Center the content vertically */
+}
+
+.content {
+    display: flex;
+    justify-content: space-between; /* Space out the quote and image */
+    width: 100%; /* Full width */
+}
+
+.blockquote-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    height: 100vh;
+    padding: 0 10px;
+    align-items: center; /* Center align */
+    text-align: center;
+    justify-content: center;
+    margin-left: 70px;
+}
+
+.blockquote {
+    position: relative;
+    font-family: 'Barlow Condensed', sans-serif;
+    max-width: 620px;
+    margin: 80px auto;
+    align-self: center;
+}
+ 
+ /* Blockquote header */
+ .blockquote h1 {
+     font-family: 'Abril Fatface', cursive;
+     position: relative; /* for pseudos */
+     color: #435E55FF;
+     font-size: 2.8rem;
+     font-weight: normal;
+     line-height: 1;
+     margin: 0;
+     border: 2px solid #fff;
+     border: solid 2px;
+     border-radius:20px;
+     padding: 25px;
+ }
+ 
+ /* Blockquote right double quotes */
+ .blockquote h1:after {
+     content:"";
+     position: absolute;
+     border: 2px solid rgb(27, 92, 70);
+     border-radius: 0 100% 0 0;
+     width: 60px;
+     height: 60px;
+     bottom: -62px;
+     left: 50px;
+     border-bottom: none;
+     border-left: none;
+     z-index: 3; 
+   
+ }
+ 
+ .blockquote h1:before {
+     content:"";
+     position: absolute;
+     width: 80px;
+     border: 6px solid #292a2b;
+     bottom: -3px;
+     left: 50px;
+     z-index: 2;
+ }
+ 
+ /* increase header size after 600px */
+ @media all and (min-width: 600px) {
+     .blockquote h1 {
+         font-size: 3rem;
+         line-height: 1.2;
+    }
+ 
+ }
+ 
+ /* Blockquote subheader */
+ .blockquote h4 {
+     position: relative;
+     color: #606060FF;
+     font-size: 1.3rem;
+     font-weight: 400;
+     line-height: 1.2;
+     margin: 0;
+     padding-top: 15px;
+     z-index: 1;
+     margin-left:150px;
+     padding-left:12px;
+ }
+ 
+  
+ .blockquote h4:first-letter {
+   margin-left:-12px;
+ }
+
+ button {
+    padding: 12px 24px; /* Button padding */
+    font-size: 1.1rem; /* Font size */
+    color: #ffffff; /* White text color */
+    background-color: #CBCE91FF; /* Match with blockquote color */
+    border: none; /* Remove border */
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for button */
+    letter-spacing: 1px; /* Slightly spaced letters */
+}
+
+button:hover {
+    background-color: #FAEBEFFF; /* Darker shade on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+    color: black;
+}
+
+
+.mood-image {
+    max-width: 800px; /* Set a maximum width for the image */
+    height: 100vh; /* Maintain aspect ratio */
+}
+
+/* Define keyframes for the animations */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%); /* Start off-screen left */
+        opacity: 0; /* Invisible at start */
+    }
+    100% {
+        transform: translateX(0); /* End at original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes slideInTop {
+    0% {
+        transform: translateY(-100%); /* Start off-screen top */
+        opacity: 0; /* Invisible at start */
+    }
+    100% {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Apply the animations */
+.blockquote-wrapper {
+    animation: slideInLeft 0.5s ease forwards; /* Animate from left */
+}
+
+.mood-image {
+    animation: slideInTop 0.5s ease forwards; /* Animate from top */
+}
+
+/* General Responsive Adjustments */
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+}
+
+nav {
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.nav-items {
+    flex-grow: 0; /* Prevent nav items from stretching */
+    margin-top: 10px; /* Add some spacing for smaller screens */
+}
+
+.logo {
+    font-size: 20px; /* Smaller logo font size for mobile */
+}
+
+@media (max-width: 768px) {
+    .blockquote h1 {
+        font-size: 2rem; /* Adjust header size for smaller screens */
+    }
+
+    .blockquote h4 {
+        font-size: 1rem; /* Adjust subheader size */
+    }
+
+    .content {
+        flex-direction: column; /* Stack content vertically on small screens */
+        align-items: center; /* Center align the content */
+    }
+
+    .mood-image {
+        max-width: 100%; /* Make image responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .blockquote-wrapper {
+        margin-left: 0; /* Remove left margin on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .blockquote h1 {
+        font-size: 1.5rem; /* Further reduce header size for very small screens */
+    }
+
+    .blockquote h4 {
+        font-size: 0.9rem; /* Further reduce subheader size */
+    }
+
+    button {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 1rem; /* Adjust button font size */
+    }
+}

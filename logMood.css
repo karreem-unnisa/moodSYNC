@@ -1,0 +1,239 @@
+    body {
+        background-color: #e8f5e9;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 20px;
+}
+
+
+.logo {
+    color: rgb(93, 4, 4);
+    font-size: 24px;
+    font-family: cursive;
+}
+
+.logo img {
+    height: 40px; /* Set the height of the logo image */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.nav-items {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-items a {
+    color: black;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-items a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+.history {
+    color: black;
+}
+
+.history a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.history a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+.hero {
+    width: 100%;
+    height: 15vh; /* Height of the hero image */
+    background-image: url('th.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+    font-size: 2rem; /* Font size for hero text */
+    opacity: 0; /* Start hidden */
+    transform: translateX(-50px); /* Move left for entrance */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for appearance */
+}
+
+.hero.visible {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Move to original position */
+}
+
+main {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items at the top */
+    justify-content: space-between; /* Space items between left and right */
+    padding: 40px; /* Padding for spacing */
+    width: 90%; /* Responsive width */
+    max-width: 800px; /* Maximum width */
+    margin: 50px auto; /* Center the main section in the page */
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Move up for entrance */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for appearance */
+}
+
+main.visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+}
+
+
+main {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items at the top */
+    justify-content: space-between; /* Space items between left and right */
+    padding: 40px; /* Padding for spacing */
+    width: 90%; /* Responsive width */
+    max-width: 800px; /* Maximum width */
+    margin: 50px auto; /* Center the main section in the page */
+}
+
+
+.mood-log {
+    flex: 1; /* Allow this section to grow */
+    margin-right: 20px; /* Space between mood log and result */
+}
+
+.mood-log:hover{
+    transform: translateY(2px); /* Lift effect on hover */
+}
+
+h1 {
+    color: #4a4a4a; /* Darker text color */
+    margin-bottom: 30px; /* Spacing below the heading */
+    font-family: 'Arial', sans-serif; /* Modern font */
+    font-weight: bold; /* Bold font for emphasis */
+    text-align: center; /* Align text to the left */
+}
+
+select, input[type="text"] {
+    width: 100%; /* Full width */
+    padding: 12px; /* Padding for inputs */
+    border: 2px solid #abe8e0; /* Blue border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    margin-bottom: 15px; /* Spacing below inputs */
+    background-color: #ffffff; /* White background */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+select:focus, input[type="text"]:focus {
+    border-color: #00b3a1; /* Darker blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 255, 247, 0.5); /* Light shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    background-color: #00b3a1; /* Bright blue background */
+    color: white; /* White text */
+    padding: 12px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    width: 100%; /* Full width */
+}
+
+button:hover {
+    background-color: rgb(104, 171, 168); /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+    color: #333;
+}
+
+#result {
+    flex: 1; /* Allow this section to grow */
+    margin-left: 20px; /* Space between mood log and result */
+    padding: 15px; /* Padding for result */
+    border: 1px solid #e1e1e1; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Full width */
+    text-align: center; /* Center text inside result */
+    color: #333; /* Dark text color for contrast */
+    transition: background-color 0.3s; /* Smooth transition */
+    
+    margin-top: 70px;
+}
+
+#result:hover {
+    background-color: #f8f9fa; /* Slightly darker background on hover */
+    border:  1px solid #333;
+}
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column; /* Stack items on smaller screens */
+    }
+
+    .mood-log {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add bottom margin */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .hero h2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Stack navigation items */
+        align-items: flex-start; /* Align to the left */
+    }
+
+    .nav-items {
+        margin-bottom: 10px; /* Space below nav items */
+    }
+
+    .mood-log {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add bottom margin */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    button {
+        font-size: 14px; /* Adjust button font size */
+        padding: 10px; /* Reduce padding */
+    }
+
+    #result {
+        margin-top: 20px; /* Reduce top margin */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .hero h2 {
+        font-size: 1rem;
+    }
+}

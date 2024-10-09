@@ -1,0 +1,164 @@
+body {
+    background-color: #f5f5d8;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 20px;
+}
+
+
+.logo {
+    color: rgb(93, 4, 4);
+    font-size: 24px;
+    font-family: cursive;
+}
+
+.logo img {
+    height: 40px; /* Set the height of the logo image */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.nav-items {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-items a {
+    color: black;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-items a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+.history {
+    color: black;
+}
+
+.history a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.history a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+/* Add this to your existing CSS */
+
+main {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start slightly lower */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+main.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Reset position */
+}
+
+
+h1 {
+    color: #1e88e5;
+    text-align: center;
+}
+
+
+#historyEntries {
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    max-width: 600px;
+}
+
+#historyEntries div {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+#historyEntries div:last-child {
+    border-bottom: none;
+}
+
+button {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff1a1a;
+}
+
+
+/* For mobile devices */
+@media (max-width: 599px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-items {
+        flex-direction: column; /* Stack nav items */
+        width: 100%; /* Full width */
+    }
+
+    .nav-items a {
+        margin: 5px 0; /* Adjust margin for stacked items */
+    }
+
+    #historyEntries {
+        width: 90%; /* Wider on mobile */
+        padding: 5px; /* Adjust padding */
+    }
+
+    h1 {
+        font-size: 20px; /* Adjust header size for mobile */
+    }
+
+    button {
+        width: 100%; /* Full-width buttons */
+        margin-top: 5px; /* Spacing between buttons */
+    }
+}
+
+/* For tablets and larger devices */
+@media (min-width: 600px) and (max-width: 1023px) {
+    nav {
+        flex-direction: row; /* Keep horizontal layout */
+    }
+
+    .nav-items {
+        flex-direction: row; /* Ensure nav items are in a row */
+    }
+
+    #historyEntries {
+        width: 80%; /* Limit width for tablets */
+    }
+}

@@ -1,0 +1,199 @@
+body {
+    background-color: #fffde7;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fffde7;
+}
+
+.logo {
+    color: rgb(93, 4, 4);
+    font-size: 24px;
+    font-family: cursive;
+}
+
+.logo img {
+    height: 40px; /* Set the height of the logo image */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.nav-items {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-items a {
+    color: black;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-items a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+.history {
+    color: black;
+}
+
+.history a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.history a:hover {
+    color: #666464; /* Change color on hover */
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgb(230, 181, 33);
+}
+
+main {
+    display: flex; /* Use flexbox for layout */
+    height: 100vh; /* Full height of the viewport */
+}
+
+.notes-container {
+    display: flex; /* Use flexbox for notes and saved notes */
+    width: 100%; /* Full width of the container */
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.note-input {
+    flex: 1; /* Left half for notes input */
+    padding: 20px; /* Padding for input area */
+    display: flex;
+    flex-direction: column; /* Stack input and button vertically */
+    background-color: rgb(223, 251, 239);
+    transform: translateX(-100%); /* Start off-screen left */
+    animation: slideInLeft 0.5s forwards; /* Slide in from left */
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.saved-notes {
+    flex: 1; /* Right half for saved notes */
+    padding: 20px; /* Padding for saved notes */
+    overflow-y: auto; /* Enable scrolling if needed */
+    background-color: #e3f2f8;
+    transform: translateX(100%); /* Start off-screen right */
+    animation: slideInRight 0.5s forwards; /* Slide in from right */
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+input[type="text"] {
+    width: 80%; /* Full width */
+    padding: 12px; /* Padding for inputs */
+    border: 2px solid #9ccef1; /* Blue border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    margin-bottom: 10px; /* Spacing below input */
+}
+
+input[type="text"]:focus {
+    border-color: #007ab3; /* Darker blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 187, 255, 0.5); /* Light shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    background-color: #f6deba; /* Bright blue background */
+    color: black; /* White text */
+    padding: 12px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    width: 30%; /* Full width */
+}
+
+button:hover {
+    background-color: #f6ee87; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.note-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Existing styles remain unchanged */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-items {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center align items */
+    }
+    
+    .nav-items a {
+        margin: 10px 0; /* Vertical spacing between links */
+    }
+
+    .history {
+        margin-top: 10px; /* Add margin to separate from nav items */
+    }
+
+    main {
+        flex-direction: column; /* Stack note input and saved notes vertically */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .notes-container {
+        flex-direction: column; /* Stack note input and saved notes vertically */
+        width: 90%; /* Give some padding on the sides */
+        margin: 0 auto; /* Center the container */
+    }
+
+    .note-input, .saved-notes {
+        width: 100%; /* Full width for both sections */
+        transform: none; /* Reset transform for small screens */
+        animation: none; /* Disable animations for simplicity */
+    }
+
+    button {
+        width: 100%; /* Full width for buttons on smaller screens */
+        margin-top: 10px; /* Add margin for separation */
+    }
+}
