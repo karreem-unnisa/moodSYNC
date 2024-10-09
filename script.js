@@ -63,39 +63,45 @@ function logMood() {
 // Function to save the mood history to localStorage
 function saveMoodHistory(mood, thoughts) {
     const historyEntries = JSON.parse(localStorage.getItem('moodHistory')) || [];
-    const date = new Date().toLocaleDateString();
-    const timestamp = new Date().getTime(); // Current timestamp
-    historyEntries.push({ id: timestamp, date, mood, thoughts });
+    const date = new Date().toLocaleString(); // Change to locale string for better display
+    historyEntries.push({ date, mood, thoughts });
     localStorage.setItem('moodHistory', JSON.stringify(historyEntries));
 }
 
+// Function to display mood history
 // Function to display mood history
 function displayMoodHistory() {
     const historyEntries = JSON.parse(localStorage.getItem('moodHistory')) || [];
     const historyDiv = document.getElementById('historyEntries');
 
-    historyDiv.innerHTML = historyEntries.map(entry => `
-        <div>
-            <span>${entry.date} - Mood: ${entry.mood} ${entry.thoughts ? `| Thoughts: ${entry.thoughts}` : ''}</span>
-            <button onclick="deleteMoodEntry(${entry.id})">❌</button>
-        </div>
-    `).join('');
+    if (historyEntries.length === 0) {
+        historyDiv.innerHTML = '<p>No mood history available.</p>'; // Message when no history exists
+    } else {
+        historyDiv.innerHTML = historyEntries.map(entry => `
+            <div>
+                <span>${entry.date} - Mood: ${entry.mood} ${entry.thoughts ? `| Thoughts: ${entry.thoughts}` : ''}</span>
+                <button onclick="deleteMoodEntry('${entry.date}')">❌</button>
+            </div>
+        `).join('');
+    }
 }
 
 // Function to delete a mood entry
-function deleteMoodEntry(id) {
+function deleteMoodEntry(date) {
     let historyEntries = JSON.parse(localStorage.getItem('moodHistory')) || [];
-    historyEntries = historyEntries.filter(entry => entry.id !== id); // Filter by ID
+    historyEntries = historyEntries.filter(entry => entry.date !== date);
     localStorage.setItem('moodHistory', JSON.stringify(historyEntries));
-    displayMoodHistory();
+    displayMoodHistory(); // Refresh the displayed list
 }
 
 // Call displayMoodHistory on page load for the history page
 document.addEventListener('DOMContentLoaded', function () {
-    if (window.location.pathname.includes('history.html')) {
-        displayMoodHistory();
-    }
+    displayMoodHistory(); // Show history when the page loads
+
+    const main = document.querySelector('main');
+    main.classList.add('visible'); // Make the main section visible
 });
+
 
 // Intersection Observer for animations
 document.addEventListener("DOMContentLoaded", function() {
@@ -124,9 +130,3 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(hero);
     observer.observe(main);
 });
-
-// Add a small timeout to ensure the transition is noticeable
-setTimeout(() => {
-    const main = document.querySelector('main');
-    main.classList.add('visible');
-}, 100); // Adjust the delay if needed

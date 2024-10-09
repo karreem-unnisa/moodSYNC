@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    overflow: hidden;
 }
 
 nav {
@@ -13,7 +12,6 @@ nav {
     background-color: transparent;
     padding: 10px 20px;
 }
-
 
 .logo {
     color: rgb(93, 4, 4);
@@ -41,7 +39,7 @@ nav {
 }
 
 .nav-items a:hover {
-    color: #666464; /* Change color on hover */
+    color: #666464;
     font-weight: bolder;
     text-shadow: 0 0 10px rgb(230, 181, 33);
 }
@@ -57,12 +55,10 @@ nav {
 }
 
 .history a:hover {
-    color: #666464; /* Change color on hover */
+    color: #666464;
     font-weight: bolder;
     text-shadow: 0 0 10px rgb(230, 181, 33);
 }
-
-/* Add this to your existing CSS */
 
 main {
     opacity: 0; /* Initially hidden */
@@ -75,12 +71,10 @@ main.visible {
     transform: translateY(0); /* Reset position */
 }
 
-
 h1 {
     color: #1e88e5;
     text-align: center;
 }
-
 
 #historyEntries {
     margin: 20px auto;
@@ -116,49 +110,47 @@ button:hover {
     background-color: #ff1a1a;
 }
 
-
-/* For mobile devices */
+/* Responsive Design */
 @media (max-width: 599px) {
     nav {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .nav-items {
-        flex-direction: column; /* Stack nav items */
-        width: 100%; /* Full width */
+        flex-direction: column;
+        width: 100%;
     }
 
     .nav-items a {
-        margin: 5px 0; /* Adjust margin for stacked items */
+        margin: 5px 0;
     }
 
     #historyEntries {
-        width: 90%; /* Wider on mobile */
-        padding: 5px; /* Adjust padding */
+        width: 90%;
+        padding: 5px;
     }
 
     h1 {
-        font-size: 20px; /* Adjust header size for mobile */
+        font-size: 20px;
     }
 
     button {
-        width: 100%; /* Full-width buttons */
-        margin-top: 5px; /* Spacing between buttons */
+        width: 100%;
+        margin-top: 5px;
     }
 }
 
-/* For tablets and larger devices */
 @media (min-width: 600px) and (max-width: 1023px) {
     nav {
-        flex-direction: row; /* Keep horizontal layout */
+        flex-direction: row;
     }
 
     .nav-items {
-        flex-direction: row; /* Ensure nav items are in a row */
+        flex-direction: row;
     }
 
     #historyEntries {
-        width: 80%; /* Limit width for tablets */
+        width: 80%;
     }
 }
