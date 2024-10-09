@@ -2,7 +2,6 @@
 function saveNote() {
     const noteInput = document.getElementById('noteInput');
     const notes = JSON.parse(localStorage.getItem('notes')) || [];
-
     const noteContent = noteInput.value.trim();
 
     // Only save if there's text
@@ -51,27 +50,3 @@ function deleteNote(index) {
 document.addEventListener('DOMContentLoaded', function () {
     displayNotes(); // Display notes when the page loads
 });
-
-function saveNote() {
-    const noteInput = document.getElementById('noteInput');
-    const savedNotesDiv = document.getElementById('savedNotes');
-
-    if (noteInput.value.trim() === "") {
-        alert("Please enter a note.");
-        return;
-    }
-
-    const noteItem = document.createElement('div');
-    noteItem.classList.add('note-item');
-    noteItem.textContent = noteInput.value;
-
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    deleteButton.onclick = function() {
-        savedNotesDiv.removeChild(noteItem);
-    };
-
-    noteItem.appendChild(deleteButton);
-    savedNotesDiv.appendChild(noteItem);
-    noteInput.value = ''; // Clear input field
-}
