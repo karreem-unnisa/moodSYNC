@@ -64,7 +64,7 @@ function logMood() {
 function saveMoodHistory(mood, thoughts) {
     const historyEntries = JSON.parse(localStorage.getItem('moodHistory')) || [];
     const date = new Date().toLocaleDateString();
-    const timestamp = new Date().getTime(); // Get the current timestamp
+    const timestamp = new Date().getTime(); // Current timestamp
     historyEntries.push({ id: timestamp, date, mood, thoughts });
     localStorage.setItem('moodHistory', JSON.stringify(historyEntries));
 }
