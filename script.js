@@ -1,5 +1,5 @@
-  // Function to handle changes in the mood selection dropdown
-  function handleMoodChange() {
+// Function to handle changes in the mood selection dropdown
+function handleMoodChange() {
     const moodSelect = document.getElementById('moodSelect');
     const customMood = document.getElementById('customMood');
     const thoughtInput = document.getElementById('thoughtInput');
@@ -85,7 +85,7 @@ function displayMoodHistory() {
 // Function to delete a mood entry
 function deleteMoodEntry(id) {
     let historyEntries = JSON.parse(localStorage.getItem('moodHistory')) || [];
-    historyEntries = historyEntries.filter(entry => entry.id !== id); // Filter by ID instead of date
+    historyEntries = historyEntries.filter(entry => entry.id !== id); // Filter by ID
     localStorage.setItem('moodHistory', JSON.stringify(historyEntries));
     displayMoodHistory();
 }
@@ -125,10 +125,8 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(main);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+// Add a small timeout to ensure the transition is noticeable
+setTimeout(() => {
     const main = document.querySelector('main');
-    // Add a small timeout to ensure the transition is noticeable
-    setTimeout(() => {
-        main.classList.add('visible');
-    }, 100); // Adjust the delay if needed
-});
+    main.classList.add('visible');
+}, 100); // Adjust the delay if needed
