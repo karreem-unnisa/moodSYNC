@@ -130,3 +130,34 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(hero);
     observer.observe(main);
 });
+
+
+// Quotes and tips for the modal
+const tips = [
+    { quote: "The best way to predict the future is to create it.", suggestion: "Take a moment to plan your goals for the week.  Call or message a friend or family member for a quick chat or catch-up." },
+    { quote: "You are never too old to set another goal or to dream a new dream.", suggestion: "Write down one thing you want to achieve today.  Keep a water bottle with you and aim to drink at least 8 glasses throughout the day." },
+    { quote: "Believe you can and you're halfway there.", suggestion: "Visualize your success for a few minutes.   Set specific times for checking your phone or social media to reduce distractions." },
+    { quote: "Act as if what you do makes a difference. It does.", suggestion: "Do something nice for someone else today.  Follow the Pomodoro technique—work for 25 minutes, then take a 5-minute break." },
+    { quote: "Keep your face always toward the sunshine—and shadows will fall behind you.", suggestion: "Spend a few minutes outside enjoying nature. Choose a word or phrase to focus on throughout the day, like calm or productive." }
+];
+
+// Function to show the modal
+function showModal() {
+    const tipModal = document.getElementById('tipModal');
+    const tipText = document.getElementById('tipText');
+
+    // Select a random tip
+    const randomTip = tips[Math.floor(Math.random() * tips.length)];
+    tipText.innerHTML = `<strong>Quote:</strong> ${randomTip.quote}<br><strong>Tip:</strong> ${randomTip.suggestion}`;
+
+    tipModal.style.display = 'block'; // Show the modal
+}
+
+// Function to close the modal
+function closeModal() {
+    const tipModal = document.getElementById('tipModal');
+    tipModal.style.display = 'none'; // Hide the modal
+}
+
+// Show the modal when the page loads
+document.addEventListener('DOMContentLoaded', showModal);

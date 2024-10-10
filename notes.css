@@ -158,42 +158,55 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* Existing styles remain unchanged */
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
-    .nav-items {
+    nav {
         flex-direction: column; /* Stack nav items vertically */
-        align-items: center; /* Center align items */
-    }
-    
-    .nav-items a {
-        margin: 10px 0; /* Vertical spacing between links */
+        align-items: flex-start; /* Align items to the left */
     }
 
-    .history {
-        margin-top: 10px; /* Add margin to separate from nav items */
+    .nav-items {
+        margin-bottom: 10px; /* Space below nav items */
     }
 
     main {
-        flex-direction: column; /* Stack note input and saved notes vertically */
-        height: auto; /* Allow height to adjust */
+        flex-direction: column; /* Stack main content vertically */
+        height: auto; /* Allow height to adjust based on content */
     }
 
     .notes-container {
-        flex-direction: column; /* Stack note input and saved notes vertically */
-        width: 90%; /* Give some padding on the sides */
-        margin: 0 auto; /* Center the container */
+        flex-direction: column; /* Stack notes input and saved notes vertically */
     }
 
     .note-input, .saved-notes {
-        width: 100%; /* Full width for both sections */
-        transform: none; /* Reset transform for small screens */
-        animation: none; /* Disable animations for simplicity */
+        width: 100%; /* Full width for inputs */
+        transform: translateX(0); /* Ensure items are in view */
+    }
+
+    input[type="text"] {
+        width: 90%; /* Full width for input */
     }
 
     button {
-        width: 100%; /* Full width for buttons on smaller screens */
-        margin-top: 10px; /* Add margin for separation */
+        width: 50%; /* Full width for buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px; /* Smaller logo font size */
+    }
+
+    input[type="text"] {
+        font-size: 14px; /* Smaller font size for inputs */
+    }
+
+    button {
+        font-size: 14px; /* Smaller font size for buttons */
+        padding: 10px; /* Reduce button padding */
+    }
+
+    .note-item {
+        flex-direction: column; /* Stack note items vertically */
+        align-items: flex-start; /* Align items to the left */
     }
 }

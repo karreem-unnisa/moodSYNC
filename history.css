@@ -110,47 +110,61 @@ button:hover {
     background-color: #ff1a1a;
 }
 
-/* Responsive Design */
-@media (max-width: 599px) {
+@media (max-width: 768px) {
     nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 10px; /* Adjust padding */
     }
 
     .nav-items {
-        flex-direction: column;
-        width: 100%;
+        margin-bottom: 10px; /* Space below nav items */
     }
 
     .nav-items a {
-        margin: 5px 0;
-    }
-
-    #historyEntries {
-        width: 90%;
-        padding: 5px;
+        font-size: 16px; /* Smaller font size for nav links */
+        margin: 15px 15px; /* Vertical margin for links */
     }
 
     h1 {
-        font-size: 20px;
-    }
-
-    button {
-        width: 100%;
-        margin-top: 5px;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 1023px) {
-    nav {
-        flex-direction: row;
-    }
-
-    .nav-items {
-        flex-direction: row;
+        font-size: 24px; /* Smaller font size for heading */
     }
 
     #historyEntries {
-        width: 80%;
+        width: 90%; /* Make history entries container wider */
+        padding: 15px; /* Add padding for mobile */
+    }
+
+    #historyEntries div {
+        flex-direction: column; /* Stack history items vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    button {
+        width: 100%; /* Full width for buttons */
+        margin-top: 10px; /* Space above buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px; /* Smaller logo font size */
+    }
+
+    .nav-items a {
+        font-size: 14px; /* Smaller font size for nav links */
+    }
+
+    h1 {
+        font-size: 20px; /* Further reduce heading size */
+    }
+
+    #historyEntries {
+        padding: 10px; /* Reduce padding */
+    }
+
+    button {
+        padding: 10px; /* Increase button padding for better touch */
+        font-size: 16px; /* Larger font size for buttons */
     }
 }

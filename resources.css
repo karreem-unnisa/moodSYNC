@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-  overflow: hidden;
 }
 
 nav {
@@ -215,60 +214,69 @@ h1 {
     }
 }
 
-/* Existing styles remain unchanged */
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
-
-    body {
-        overflow: scroll; /* Reduce font size for smaller screens */
-    }
     nav {
         flex-direction: column; /* Stack nav items vertically */
-        align-items: center; /* Center align items */
+        align-items: flex-start; /* Align items to the left */
+        padding: 10px; /* Adjust padding */
     }
 
     .nav-items {
-        margin: 10px 0; /* Add margin for spacing */
-        flex-direction: column; /* Stack links vertically */
-        align-items: center; /* Center links */
-    }
-
-    .nav-items a {
-        margin: 5px 0; /* Vertical spacing between links */
-        font-size: 16px; /* Slightly smaller font size */
-    }
-
-    h1 {
-        font-size: 24px; /* Adjust heading size for smaller screens */
+        margin-bottom: 10px; /* Space below nav items */
     }
 
     .cards-container {
         flex-direction: column; /* Stack cards vertically */
-        margin: 10px 0; /* Reduced margin for compactness */
+        align-items: center; /* Center cards */
     }
 
     .card {
-        width: 100%; /* Full width for cards */
-        margin: 10px 0; /* Vertical spacing for cards */
-        height: auto; /* Auto height for better content fit */
+        width: 90%; /* Make cards wider on small screens */
+        margin: 10px 0; /* Vertical margin for spacing */
+        height: auto; /* Adjust height for responsiveness */
     }
 
     .image-bg-card {
-        height: auto; /* Auto height for background card */
+        height: 200px; /* Set a fixed height for background cards */
+    }
+
+    .large-image img {
+        width: 100%; /* Full width for images */
+        max-height: 30vh; /* Reduce max height */
+    }
+
+    h1 {
+        font-size: 24px; /* Reduce font size for headings */
     }
 
     .keyword-container {
         flex-direction: column; /* Stack keywords vertically */
-        align-items: center; /* Center align keywords */
+        align-items: center; /* Center keywords */
     }
 
     .keyword-container a {
         margin: 5px 0; /* Vertical spacing for links */
     }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px; /* Smaller logo font size */
+    }
+
+    .nav-items a {
+        font-size: 16px; /* Smaller font size for nav links */
+    }
+
+    .keyword-container a {
+        font-size: 14px; /* Smaller font size for keywords */
+    }
 
     .large-image img {
-        width: 90%; /* Adjust width for large image */
-        height: auto; /* Auto height for aspect ratio */
+        height: 25vh; /* Further reduce image height */
+    }
+
+    .card {
+        padding: 10px; /* Add padding for card content */
     }
 }
