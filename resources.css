@@ -216,13 +216,18 @@ h1 {
 
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: flex-start; /* Align items to the left */
-        padding: 10px; /* Adjust padding */
+        flex-direction: column; /* Stack items */
+        align-items: center;
     }
 
     .nav-items {
-        margin-bottom: 10px; /* Space below nav items */
+        flex-direction: column; /* Stack nav items */
+        align-items: center;
+    }
+
+    .nav-items a {
+        margin: 5px 0; /* Adjust margin for stacked items */
+        font-size: 16px; /* Smaller font for mobile */
     }
 
     .cards-container {
@@ -236,9 +241,10 @@ h1 {
         height: auto; /* Adjust height for responsiveness */
     }
 
-    .image-bg-card {
+    .card .image-bg-card {
         height: 200px; /* Set a fixed height for background cards */
     }
+
 
     .large-image img {
         width: 100%; /* Full width for images */
@@ -252,6 +258,7 @@ h1 {
     .keyword-container {
         flex-direction: column; /* Stack keywords vertically */
         align-items: center; /* Center keywords */
+
     }
 
     .keyword-container a {

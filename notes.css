@@ -3,7 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 nav {
@@ -160,12 +161,18 @@ button:hover {
 
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: flex-start; /* Align items to the left */
+        flex-direction: column; /* Stack items */
+        align-items: center;
     }
 
     .nav-items {
-        margin-bottom: 10px; /* Space below nav items */
+        flex-direction: column; /* Stack nav items */
+        align-items: center;
+    }
+
+    .nav-items a {
+        margin: 5px 0; /* Adjust margin for stacked items */
+        font-size: 16px; /* Smaller font for mobile */
     }
 
     main {

@@ -72,7 +72,7 @@ main.visible {
 }
 
 h1 {
-    color: #1e88e5;
+    color: #ea7531;
     text-align: center;
 }
 
@@ -112,19 +112,20 @@ button:hover {
 
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: flex-start; /* Align items to the left */
-        padding: 10px; /* Adjust padding */
+        flex-direction: column; /* Stack items */
+        align-items: center;
     }
 
     .nav-items {
-        margin-bottom: 10px; /* Space below nav items */
+        flex-direction: column; /* Stack nav items */
+        align-items: center;
     }
 
     .nav-items a {
-        font-size: 16px; /* Smaller font size for nav links */
-        margin: 15px 15px; /* Vertical margin for links */
+        margin: 5px 0; /* Adjust margin for stacked items */
+        font-size: 16px; /* Smaller font for mobile */
     }
+
 
     h1 {
         font-size: 24px; /* Smaller font size for heading */

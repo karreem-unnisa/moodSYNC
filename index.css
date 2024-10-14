@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
- 
+    overflow: auto;
 }
 
 nav {
@@ -220,53 +220,60 @@ button:hover {
     animation: slideInTop 0.5s ease forwards; /* Animate from top */
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 600px) {
     nav {
-        flex-direction: column; /* Stack navigation items vertically */
-        align-items: flex-start; /* Align to the left */
+        flex-direction: column; /* Stack items */
+        align-items: center;
     }
 
     .nav-items {
-        margin-bottom: 10px; /* Space below nav items */
+        flex-direction: column; /* Stack nav items */
+        align-items: center;
+    }
+
+    .nav-items a {
+        margin: 5px 0; /* Adjust margin for stacked items */
+        font-size: 16px; /* Smaller font for mobile */
     }
 
     .blockquote-wrapper {
-        margin-left: 0; /* Remove left margin on smaller screens */
-        padding: 0 5px; /* Add some padding */
+        margin-left: 0; /* Center the blockquote on mobile */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .blockquote {
+        max-width: 90%; /* Wider for small screens */
+        margin: 10px auto; /* Adjust margin */
     }
 
     .blockquote h1 {
-        font-size: 2rem; /* Smaller font size for headings */
+        font-size: 1.5rem; /* Smaller font size */
+        padding: 15px; /* Adjust padding */
     }
 
     .blockquote h4 {
-        font-size: 1rem; /* Adjust font size for subheader */
-        margin-left: 0; /* Remove left margin */
-        padding-left: 0; /* Remove left padding */
+        font-size: 1rem; /* Smaller subheader */
     }
 
     button {
-        width: 100%; /* Make buttons full width */
-        padding: 10px; /* Reduce padding for smaller screens */
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 1rem; /* Adjust button font size */
     }
 
     .mood-image {
-        max-width: 100%; /* Ensure the image fits within the viewport */
-        height: auto; /* Maintain aspect ratio */
+        max-width: 50%; /* Full width */
+        height: 90vh; /* Maintain aspect ratio */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-height: 600px) {
+    .blockquote {
+        margin: 40px auto; /* Adjust margin for shorter screens */
+    }
+
     .blockquote h1 {
-        font-size: 1.8rem; /* Further reduce font size for small screens */
-    }
-
-    .blockquote h4 {
-        font-size: 0.9rem; /* Further reduce subheader font size */
-    }
-
-    button {
-        font-size: 1rem; /* Adjust button font size */
-        padding: 8px; /* Reduce padding for small screens */
+        font-size: 2.5rem; /* Slightly larger for taller screens */
     }
 }
+
